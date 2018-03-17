@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import 'src/fonts.scss';
 
 body {
@@ -144,4 +145,12 @@ input[type=submit]:focus {
   /*when navigating through the items using the arrow keys:*/
   background-color: #8BC34A !important;
   color: #ffffff;
+=======
+mat-sidenav-container {
+  position: absolute;
+  top: 64px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+>>>>>>> 590e1dc7d48dcc217c82417d0ddda6ba1e20efb6
 }

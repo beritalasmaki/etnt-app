@@ -1,0 +1,40 @@
+<<<<<<< HEAD
+=======
+@import 'src/fonts.scss';
+
+
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+
+mat-card {
+  max-width: 80%;
+  margin: 2em auto;
+  text-align: center;
+}
+
+.main-title {
+color: $toolbar-title;
+font-size: 24px;
+font-family: 'Assistant', sans-serif;
+margin-left:50%;
+}
+
+mat-toolbar-row {
+  justify-content: space-between;
+}
+
+.done {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: white;
+}
+
+.test {
+  background-color: red;
+}
+
+>>>>>>> 590e1dc7d48dcc217c82417d0ddda6ba1e20efb6
