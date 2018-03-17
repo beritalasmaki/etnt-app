@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {Sort} from '@angular/material';
+import {FormControl} from '@angular/forms';
+import {data} from './foodata';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Eat this Not That sovellukseen';
+  displayedColumns = ['name', 'calories']; // 'keyword' jätetty pois, koska hakukone käyttää sitä vain löytäkseen sopivan korvikkeen.
+  dataSource = data;
+
 }

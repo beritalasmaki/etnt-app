@@ -12,8 +12,78 @@
 
 <!--HUOMIOI TÄSSÄ role="" koodit, mitkä liittyy esteettömyyteen!!! -->
   <mat-sidenav-container>
-    <mat-sidenav role="navigation" mode="side" opened> Sidenav content</mat-sidenav>
-    <mat-sidenav-content role="search-tool" >Main content</mat-sidenav-content>
+    <mat-sidenav class="sidenav" role="navigation" mode="side" opened>
+      <div class="sidenav-title" role="side-navigation-title">
+        Valikko
+      </div>
+      <div class="sidenav-title-second" role="side-navigation-title">
+        Valikko 2
+      </div>
+
+
+    </mat-sidenav>
+
+    <mat-sidenav-content role="search-tool" >
+      <div class="main-content">
+        <h1 class="main-content-title">Search for an item</h1>
+        <p>
+          If you are looking for a healthy alternative to replace unhealthy craving, you can begin by typing the name of your craving to the search bar below. Our search will look for the best alternatives for you from our database system.
+        </p>
+
+
+<!--JATKA TÄSTÄ HUOMENNA https://angularfirebase.com/lessons/autocomplete-search-with-angular4-and-firebase/ !!!!!!!!!!! -->
+
+<form autocomplete="off">
+  <div class="autocomplete" style="width:50%">
+    <input id="myInput" type="text" name="myCountry" placeholder="Name of the food">
+  </div>
+  <input type="submit" value="Search">
+</form>
+
+      <div class="mat-elevation-z8">
+
+          <mat-table #table [dataSource]="dataSource">
+
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+
+            <!-- Position Column -->
+            <ng-container matColumnDef="position">
+              <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+              <mat-header-cell *matHeaderCellDef> Food Item </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="calories">
+              <mat-header-cell *matHeaderCellDef> Calories/100g </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.calories}} </mat-cell>
+            </ng-container>
+
+            <!-- Symbol Column
+            <ng-container matColumnDef="keyword">
+              <mat-header-cell *matHeaderCellDef> Keyword </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.keyword}} </mat-cell>
+            </ng-container> -->
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+        </div>
+
+
+        <!-- Copyright 2018 Google Inc. All Rights Reserved.
+            Use of this source code is governed by an MIT-style license that
+            can be found in the LICENSE file at http://angular.io/license -->
+
+
+        </div>
+    </mat-sidenav-content>
   </mat-sidenav-container>
 
 </div>
