@@ -33,25 +33,21 @@
 
 <!--JATKA TÄSTÄ HUOMENNA https://angularfirebase.com/lessons/autocomplete-search-with-angular4-and-firebase/ !!!!!!!!!!! -->
 
+
+
 <form autocomplete="on">
   <div class="autocomplete" style="width:50%">
-    <input id="myInput" type="text" name="foodItem" placeholder="Name of the food" [(ngModel)]="query">
+    <input id="myInput" type="text" name="foodItem" placeholder="Name of the food e.g. 'Chocolate' " [(ngModel)]="query">
   </div>
-  <input type="submit" value="Search">
 </form>
+
+
+
+
 
       <div class="mat-elevation-z8">
 
-          <mat-table #table [dataSource]="dataSource">
-
-            <!--- Note that these columns can be defined in any order.
-                  The actual rendered columns are set as a property on the row definition" -->
-
-            <!-- Position Column -->
-            <ng-container matColumnDef="position">
-              <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
-              <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
-            </ng-container>
+          <mat-table #table [dataSource]="getData()" *ngIf="query">
 
             <!-- Name Column -->
             <ng-container matColumnDef="name">
