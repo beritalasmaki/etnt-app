@@ -14,6 +14,6 @@ export class AppComponent {
   query: string = '';
 
   getData() {
-    return this.dataSource.filter(item => item.keyword.includes(this.query));
+    return this.dataSource.filter(item => item.keyword.toLowerCase().includes(this.query.toLowerCase()));
   }
 }

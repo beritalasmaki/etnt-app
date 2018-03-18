@@ -1,0 +1,78 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!-- <div style="text-align:center">
+  <h1>
+    Tervetuloa {{ title }}!
+  </h1>
+</div> -->
+
+<div>
+  <mat-toolbar color="primary">
+    <span class="main-title">Eat this. Not That.</span>
+  </mat-toolbar>
+
+  <mat-sidenav-container>
+    <mat-sidenav class="sidenav" role="navigation" mode="side" opened>
+      <div class="sidenav-title" role="side-navigation-title">
+    <a href="#" style="text-decoration:none; color:inherit; cursor:default;">    Menu </a>
+  <ul>
+
+    <li><a  routerLink="/main" routerLinkActive="active"> Search Tool </a></li>
+    <li><a  routerLink="/help" routerLinkActive="active"> Help </a></li>
+</ul>
+      </div>
+
+      <div class="sidenav-title-second" role="side-navigation-title">
+      <a href="#" style="text-decoration:none; color:inherit; cursor:default;">  Links </a>
+      <ul>
+
+        <li><a href="#"> VAMK </a></li>
+        <li><a href="#"> Theseus </a></li>
+    </ul>
+      </div>
+
+
+    </mat-sidenav>
+
+    <mat-sidenav-content role="search-tool">
+      <div class="main-content">
+        <h1 class="main-content-title">Search for an item</h1>
+        <p>
+          If you are looking for a healthy alternative to replace unhealthy craving, you can begin by typing the name of your craving to the search bar below. Our search will look for the best alternatives for you from our database system.
+        </p>
+
+
+        <form aria-label="search-input" autocomplete="on">
+          <div class="autocomplete" style="width:50%">
+            <input id="myInput" type="text" name="foodItem" placeholder="Name of the food e.g. 'Chocolate' " [(ngModel)]="query">
+          </div>
+        </form>
+
+          <mat-table #table [dataSource]="getData()" *ngIf="query" aria-label="search-results-table">
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+              <mat-header-cell aria-label="column-header" *matHeaderCellDef> Food Item </mat-header-cell>
+              <mat-cell aria-label="search-result" *matCellDef="let element"> {{element.name}} </mat-cell>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="calories">
+              <mat-header-cell aria-label="column-header" *matHeaderCellDef> Calories/100g </mat-header-cell>
+              <mat-cell aria-label="search-result" *matCellDef="let element"> {{element.calories}} </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+
+
+        <!-- Copyright 2018 Google Inc. All Rights Reserved.
+            Use of this source code is governed by an MIT-style license that
+            can be found in the LICENSE file at http://angular.io/license -->
+
+
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+</div>
