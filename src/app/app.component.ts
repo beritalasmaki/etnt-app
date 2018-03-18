@@ -11,5 +11,9 @@ import {data} from './foodata';
 export class AppComponent {
   displayedColumns = ['name', 'calories']; // 'keyword' jätetty pois, koska hakukone käyttää sitä vain löytäkseen sopivan korvikkeen.
   dataSource = data;
+  query: string = '';
 
+  getData() {
+    return this.dataSource.filter(item => item.name.includes(this.query));
+  }
 }

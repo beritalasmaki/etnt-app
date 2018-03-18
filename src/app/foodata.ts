@@ -1,6 +1,6 @@
-// import Element from './interface.ts';
+import { Element } from './interface';
 
-export const data: = [
+export const data: Element[] = [
   {name: 'Apple', calories: 1.0079, keyword: 'H'},
   {name: 'Cotton Cheese', calories: 4.0026, keyword: 'He'},
   {name: 'Chicken Breast', calories: 6.941, keyword: 'Li'},
